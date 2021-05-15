@@ -131,7 +131,7 @@ sudo service notesntodos status
 Then enable it for automatic start at boot:
 
 ```text
-sudo service notesntodos enable
+sudo systemctl enable notesntodos
 ```
 
 ## Links

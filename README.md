@@ -5,7 +5,7 @@ Note'n'Todos is a web app for managing personal notes and todos. The notes are w
 
 Try the playground here:
 
-    https://lpss.dk/nnt-playground
+- https://lpss.dk/nnt-playground
 
 ## How to compile and run locally
 
@@ -134,6 +134,6 @@ Then enable it for automatic start at boot:
 sudo service notesntodos enable
 ```
 
-## Relevant links
+## Links
 
 - https://hub.docker.com/repository/docker/larspontoppidan/notesntodos

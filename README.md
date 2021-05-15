@@ -1,26 +1,21 @@
 
 # Notes'n'Todos
 
-Selfhosted web application for editing notes and managing todos with markdown syntax.
+Note'n'Todos is a web app for managing personal notes and todos. The notes are written in markdown and have time stamps, tags and embedded todos. The back end stores the notes as plain text files on the server.
 
-Try it in the [playground](https://lpss.dk/nnt-playground)!
+Try the playground here:
 
-## Features
-
-- Notes are written with markdown syntax
-- Notes are shown sorted by date 
-- Todo items are declared in the markdown with github task list syntax: `- [ ]`
-- Tags system for filtering notes
-- Multiple note books 
-- The notes 
+    https://lpss.dk/nnt-playground
 
 ## How to compile and run locally
 
 Install dependencies
 
 ```text
-sudo apt install python3.9-venv python3.9-dev 
+sudo apt install python3.9-venv python3.9-dev
 ```
+
+If python3.9 is not available you may add the PPA deadsnakes: `sudo add-apt-repository ppa:deadsnakes/ppa`
 
 Pull the repository
 
@@ -29,7 +24,7 @@ git clone https://github.com/larspontoppidan/notesntodos
 cd notesntodos
 ```
 
-Install and build release
+Install, build and serve the app: (for development purposes)
 
 ```text
 npm install
@@ -37,8 +32,9 @@ npm run build
 npm run serve
 ```
 
-If `npm` is not installed, consider following installation instructions such as these: https://github.com/nodesource/distributions and the suggestions here: https://stackoverflow.com/a/55274930 - to avoid version and permission issues.
+Now, Notes'n'Todos should be available locally at: http://localhost:8081/notes/
 
+If `npm` is not available, consider following installation instructions such as these: https://github.com/nodesource/distributions and the suggestions here: https://stackoverflow.com/a/55274930 - to avoid version and permission issues.
 
 ### Hints for using vscode + pylance
 
@@ -79,9 +75,9 @@ At this point the Notes'n'Todos app should be available according to the configu
 
 ### Nginx reverse proxy with http authentication
 
-Note'n'Todos doesn't currently have login management. The way to restrict access is currently to setup http authentication.
+Note'n'Todos doesn't currently have login management, but http authentication can be used to restrict access.
 
-Running the following one-liner as root asks for username and password and stores the digest as `/etc/notesntodos.htpasswd`
+Running the following will shift user to root, ask for username and password and store the digest as `/etc/notesntodos.htpasswd`
 
 ```text
 sudo su
@@ -89,7 +85,7 @@ printf "`read -p Username:\ ; echo $REPLY`:`openssl passwd -apr1`\n" >> /etc/not
 exit
 ```
 
-Example server block for nginx for serving on http. Adjust `server_name` and enter the correct port in the `proxy_pass` statement:
+Example server block for nginx for serving Notes'n'Todos. Adjust `server_name` and enter the correct port in the `proxy_pass` statement:
 
 ```text
 server {
@@ -123,7 +119,7 @@ ExecStart=/usr/bin/start_notesntodos
 WantedBy=multi-user.target
 ```
 
-Check that starting, stopping and status for the service works without errors:
+Check that starting, stopping and status for the service work without errors:
 
 ```text
 sudo service notesntodos start
@@ -138,5 +134,6 @@ Then enable it for automatic start at boot:
 sudo service notesntodos enable
 ```
 
-## Links
+## Relevant links
 
+- https://hub.docker.com/repository/docker/larspontoppidan/notesntodos

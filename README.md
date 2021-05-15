@@ -1,7 +1,7 @@
 
 # Notes'n'Todos
 
-Note'n'Todos is a web app for managing personal notes and todos. The notes are written in markdown and have time stamps, tags and embedded todos. The back end stores the notes as plain text files on the server.
+Note'n'Todos is an open source web app for managing personal notes and todos. The notes are written in markdown and have time stamps, tags and embedded todos. The back end stores the notes as plain text files on the server.
 
 Try the playground here:
 
@@ -136,4 +136,5 @@ sudo systemctl enable notesntodos
 
 ## Links
 
-- https://hub.docker.com/repository/docker/larspontoppidan/notesntodos
+- Blog post: https://larsee.com/blog/2021/05/introducing-notesntodos/
+- Docker: https://hub.docker.com/repository/docker/larspontoppidan/notesntodos

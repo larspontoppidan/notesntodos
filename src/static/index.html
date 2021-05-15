@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Notes'n'Todos</title>
+
+<meta name='viewport' content='initial-scale=0.9, maximum-scale=0.9' />
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+<style>
+html, body {
+	margin: 0;
+	font-family: helvetica, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+th, td {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+    padding: 8px 10px;
+}
+
+th {
+    border-top: none;
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
+
+.table th, .table td { line-height: 1.2em; }
+
+h1 {
+  color: #888;
+  margin: 5px 0 10px 0;
+  font-size: 22pt;
+}
+
+li {
+  margin: 5px 0;
+}
+
+.todolist p {
+  margin: 5px 0;
+}
+
+.todolist {
+  margin: 10px 0 20px 0;
+}
+
+
+.task-list-item {
+  list-style-type: none !important;
+  margin: 4px 0;
+}
+
+.task-list-item input[type="checkbox"] {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+.note .task-list-control {
+	margin-left: -22px;
+}
+
+pre {
+  background-color: #fff;
+  padding: 8px;
+  overflow: auto;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+}
+
+code {
+  font-family: Menlo, Monaco, Lucida Console, monospace;
+  font-size: 90%;
+}
+
+:not(pre) > code {
+  background-color: #fff;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript" src="vars.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
+

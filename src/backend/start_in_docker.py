@@ -36,7 +36,10 @@ host_port = ":5000"
 notes_root = "/notes"
 books = os.environ.get('NOTEBOOKS', '')
 booknames = os.environ.get('NOTEBOOK_NAMES', '')
-playground = os.environ.get('PLAYGROUND', '0') == '1'
+try:
+    playground = int(os.environ.get('PLAYGROUND', '0'))
+except:
+    playground = 0
 
 # Set up the header links
 makeVarsJs(web_path + "/vars.js", books, booknames, base_url)
@@ -55,8 +58,8 @@ import notesntodos.server
 def startServer():
     notesntodos.server.start(web_path, host_port, notes_root, base_url, books)
 
-if playground:
-    print("*** Starting in playground mode ***")
+if playground > 0:
+    print("*** Starting in playground mode: %d minutes reset ***" % playground)
     book_folders = []
     for book in books.split(","):
         path = notes_root + "/" + book if len(book) > 0 else notes_root
@@ -64,7 +67,7 @@ if playground:
 
     from playground import runPlayground
     # 30 minutes clean up time
-    runPlayground(book_folders, startServer, 30)
+    runPlayground(book_folders, startServer, playground)
 else:
     print("*** Starting in normal mode ***")
     startServer()

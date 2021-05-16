@@ -45,7 +45,7 @@ function setup() {
   prepareFolder "/tmp/book1"
   prepareFolder "/tmp/book2"
 
-  # Enable playground mode with: OTHER_ENV='-e PLAYGROUND=1'
+  # Enable playground mode with: OTHER_ENV='-e PLAYGROUND=60' for 60 minutes reset interval
   # Carefull! This will periodically delete files in the notebook folders
   OTHER_ENV=
 }

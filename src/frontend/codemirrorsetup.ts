@@ -27,18 +27,18 @@ import { EditorSelection } from '@codemirror/state';
 // Tab and shift-tab indents or indets-less.
 
 const Theme = EditorView.theme({
-  $: {
+  "&": {
     fontSize: "10.5pt",
     border: "1px solid #c0c0c0"
   },
-  $content: {
+  ".cm-content": {
     fontFamily: "Menlo, Monaco, Lucida Console, monospace",
     minHeight: "200px"
   },
-  $gutter: {
+  ".cm-gutters": {
     minHeight: "200px"
   },
-  $scroller: {
+  ".cm-scroller": {
     overflow: "auto",
     maxHeight: "600px"
   }

@@ -12,7 +12,7 @@
     "serve2": "python_venv/bin/python src/backend/start_dev.py build/dev serve2",
     "serve-playground": "python_venv/bin/python src/backend/start_dev.py build/dev playground",
     "serve-release": "python_venv/bin/python src/backend/start_dev.py build/release serve2",
-    "postinstall": "patch-package && python3.9 -m venv python_venv && python_venv/bin/pip install --upgrade pip && python_venv/bin/pip install -r requirements.txt"
+    "postinstall": "patch-package && python3 -m virtualenv .venv && .venv/bin/pip install --upgrade pip && .venv/bin/pip install -r requirements.txt"
   },
   "keywords": [],
   "author": "",
